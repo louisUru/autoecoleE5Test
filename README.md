@@ -1,6 +1,6 @@
 # autoecoleE5
 
-Projet faite en Java pour une épreuve E5
+Projet fait en Java pour une épreuve E5
 
 Fonctionnalité globale : 
 
