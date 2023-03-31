@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controlers;
+import Entities.Categorie;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,6 +69,62 @@ public class CtrlAdmin {
             Logger.getLogger(CtrlAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+         
+         public void AjoutCategorie (String libelle, double prix){
+             
+             
+        try{
+            ps = cnx.prepareStatement("SELECT CodeCategorie from categorie WHERE Libelle = ?;");
+            ps.setString(1, libelle);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+            // Afficher un message d'erreur ou arrêter l'exécution de la fonction
+            System.out.println("Une categorie existe déja");
+            return;
+        }
+            ps = cnx.prepareStatement("INSERT INTO categorie (codeCategorie,Libelle,Prix) SELECT COUNT(codeCategorie)+1,?,? from categorie;");
+            ps.setString(1, libelle);
+            ps.setDouble(2, prix);
+            ps.execute();
+            ps.close();
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(CtrlAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        
+         public void ModifCategorie (int ancienCode, String libelle, double prix){
+        try {
+            ps = cnx.prepareStatement("UPDATE categorie SET Libelle = ?, Prix = ? WHERE categorie.codeCategorie = ? +1;");
+            ps.setString(1, libelle);
+            ps.setDouble(2, prix);
+            ps.setInt(3, ancienCode);
+            ps.execute();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        
+            public Categorie getInfoCategorie(int code)
+    {
+        Categorie unCategorie = null;
+        try {
+            ps = cnx.prepareStatement("SELECT categorie.codeCategorie, categorie.libelle, categorie.prix from categorie where categorie.codeCategorie = ? +1");
+            ps.setInt(1, code);
+            rs = ps.executeQuery();
+            if(rs.next())
+            {
+                unCategorie = new Categorie(code,rs.getString("Libelle"),rs.getDouble("Prix"));
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CtrlUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return unCategorie;
+    }
+         
+         
     
     public DefaultListModel getCategorie() throws SQLException
     {

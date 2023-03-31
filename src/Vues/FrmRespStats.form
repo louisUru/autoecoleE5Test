@@ -26,23 +26,24 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="btnDeco" min="-2" pref="185" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnResp" min="-2" pref="185" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnVehicule" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="btnCategorie2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnMoniteur" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                           <Component id="btnLecon" min="-2" pref="306" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnStats" min="-2" pref="90" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnDeco" min="-2" pref="185" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnResp" min="-2" pref="185" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -69,6 +70,7 @@
                   <Component id="btnVehicule" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnMoniteur" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnStats" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCategorie2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="btnLecon" min="-2" max="-2" attributes="0"/>
@@ -159,5 +161,13 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
     </Container>
+    <Component class="javax.swing.JButton" name="btnCategorie2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cat&#xe9;gorie"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCategorie2ActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

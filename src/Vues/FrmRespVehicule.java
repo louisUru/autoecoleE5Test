@@ -41,6 +41,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
         btnLecon = new javax.swing.JButton();
         btnAjoutVehicule = new javax.swing.JButton();
         btnModifVehicule = new javax.swing.JButton();
+        btnCategorie2 = new javax.swing.JButton();
 
         btnDeco.setText("Déconnexion");
         btnDeco.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +101,13 @@ public class FrmRespVehicule extends javax.swing.JFrame {
             }
         });
 
+        btnCategorie2.setText("Catégorie");
+        btnCategorie2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategorie2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,13 +121,13 @@ public class FrmRespVehicule extends javax.swing.JFrame {
                         .addComponent(btnResp, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVehicule, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnLecon, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(btnMoniteur, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnCategorie2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnMoniteur, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnLecon, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnStats, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -139,7 +147,8 @@ public class FrmRespVehicule extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVehicule)
                     .addComponent(btnMoniteur)
-                    .addComponent(btnStats))
+                    .addComponent(btnStats)
+                    .addComponent(btnCategorie2))
                 .addGap(26, 26, 26)
                 .addComponent(btnLecon)
                 .addGap(126, 126, 126)
@@ -205,6 +214,13 @@ public class FrmRespVehicule extends javax.swing.JFrame {
         frm.setVisible(true);
     }//GEN-LAST:event_btnModifVehiculeActionPerformed
 
+    private void btnCategorie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategorie2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        FrmRespCategorie frm = new FrmRespCategorie(leUser);
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnCategorie2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -243,6 +259,7 @@ public class FrmRespVehicule extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjoutVehicule;
+    private javax.swing.JButton btnCategorie2;
     private javax.swing.JButton btnDeco;
     private javax.swing.JButton btnLecon;
     private javax.swing.JButton btnModifVehicule;

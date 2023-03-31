@@ -237,6 +237,10 @@ public class FrmRespModifVehicule extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         leCtrlA = new CtrlAdmin();
         ctrlUser = new CtrlUser();
+        txtImmatriculation.setEnabled(false);
+        txtAnnee.setEnabled(false);
+        txtMarque.setEnabled(false);
+        txtModele.setEnabled(false);
         try {
             lstCategorie.setModel(leCtrlA.getCategorie());
             lstVehicule.setModel(leCtrlA.getImma());
@@ -278,6 +282,10 @@ public class FrmRespModifVehicule extends javax.swing.JFrame {
 
     private void lstVehiculeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstVehiculeMouseClicked
         cnx = new ConnexionBDD();
+        txtImmatriculation.setEnabled(true);
+        txtAnnee.setEnabled(true);
+        txtMarque.setEnabled(true);
+        txtModele.setEnabled(true);
         unVehicule = leCtrlA.getInfoVehicule(lstVehicule.getSelectedValue());
         txtImmatriculation.setText(unVehicule.getImmatriculation());
         txtMarque.setText(unVehicule.getMarque());

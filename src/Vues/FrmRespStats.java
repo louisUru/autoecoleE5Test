@@ -49,6 +49,7 @@ public class FrmRespStats extends javax.swing.JFrame {
         btnLecon = new javax.swing.JButton();
         pnlGraph3 = new javax.swing.JPanel();
         pnlGraph4 = new javax.swing.JPanel();
+        btnCategorie2 = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -106,6 +107,13 @@ public class FrmRespStats extends javax.swing.JFrame {
         pnlGraph4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         pnlGraph4.setLayout(new java.awt.BorderLayout());
 
+        btnCategorie2.setText("Catégorie");
+        btnCategorie2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategorie2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,19 +122,20 @@ public class FrmRespStats extends javax.swing.JFrame {
                 .addGap(282, 282, 282)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnDeco, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnResp, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVehicule, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(108, 108, 108)
+                                .addComponent(btnCategorie2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnMoniteur, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnLecon, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(btnStats, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnStats, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnDeco, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnResp, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(138, Short.MAX_VALUE)
@@ -146,7 +155,8 @@ public class FrmRespStats extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVehicule)
                     .addComponent(btnMoniteur)
-                    .addComponent(btnStats))
+                    .addComponent(btnStats)
+                    .addComponent(btnCategorie2))
                 .addGap(26, 26, 26)
                 .addComponent(btnLecon)
                 .addGap(67, 67, 67)
@@ -239,6 +249,13 @@ public class FrmRespStats extends javax.swing.JFrame {
         pnlGraph4.validate();
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnCategorie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategorie2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        FrmRespCategorie frm = new FrmRespCategorie(leUser);
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnCategorie2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -276,6 +293,7 @@ public class FrmRespStats extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCategorie2;
     private javax.swing.JButton btnDeco;
     private javax.swing.JButton btnLecon;
     private javax.swing.JButton btnMoniteur;
